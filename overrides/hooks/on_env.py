@@ -29,7 +29,6 @@ def obsidian_graph():
         net.save_graph(str(Path.cwd() / "docs" / "assets" / "graph.html"))
     except OSError:
         pass
-    shutil.rmtree(Path.cwd() / "lib")
     log.info("[OBSIDIAN GRAPH] Graph generated!")
     return ""
 
