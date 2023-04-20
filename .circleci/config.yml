@@ -1,0 +1,30 @@
+version: 2.1
+
+orbs:
+  aws-s3: circleci/aws-s3@3.0
+
+jobs:
+  build_website:
+    docker:
+      - image: cimg/python:3.9
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "93:cb:27:b3:11:c7:99:17:7f:95:43:c9:89:fc:8c:be"
+      - run: |-
+          git clone https://github.com/PixelToast/mkdocs-material-insiders.git
+          pip install ./mkdocs-material-insiders
+          export PYTHONPATH=`pwd`
+          mkdocs build
+      - aws-s3/sync:
+          from: site/
+          to: s3://femboy
+      - run: aws cloudfront create-invalidation --distribution-id $NOTES_CF_DISTRIBUTION --paths "/*"
+
+workflows:
+  master:
+    jobs:
+      - build_website
+    when:
+      equal: [ "master", << pipeline.git.branch >> ]
