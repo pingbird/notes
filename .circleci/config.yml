@@ -15,6 +15,7 @@ jobs:
       - run: |-
           git clone https://github.com/PixelToast/mkdocs-material-insiders.git
           pip install ./mkdocs-material-insiders
+          pip install -r requirements.txt
           export PYTHONPATH=`pwd`
           mkdocs build
       - aws-s3/sync:
