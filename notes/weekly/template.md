@@ -2,5 +2,4 @@
 share: true
 ---
 
-# {{date:YYYY-MM-DD}}
-
+## <% tp.file.title + ' - ' + tp.date.now('YYYY') %>
