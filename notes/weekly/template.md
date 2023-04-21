@@ -2,4 +2,4 @@
 share: true
 ---
 
-## <% tp.file.title + ' - ' + tp.date.now('YYYY') %>
+# <% 'Week ' + tp.date.now('WW') + ' - ' + tp.date.now('YYYY') %>
