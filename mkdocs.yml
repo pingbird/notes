@@ -84,15 +84,15 @@ markdown_extensions:
 plugins:
   - search
   - meta-descriptions
+  - meta
   - git-revision-date-localized:
       type: date
       fallback_to_build_date: true
       locale: en
       custom_format: "%A %d %B %Y"
       enable_creation_date: true
-
   - ezlinks:
-        wikilinks: true
+      wikilinks: true
   - awesome-pages
   - embed_file:
       callouts: true
@@ -100,7 +100,7 @@ plugins:
   - custom-attributes:
       file: 'assets/css/custom_attributes.css'
   - tags:
-      tags_file: tags.md
+      tags_file: index.md
   - encryptcontent:
       title_prefix: '🔐'
       summary: 'Private page'

@@ -1,1 +1,6 @@
-# Hello, World!
+# Home
+
+This site contains my notes.
+
+[TAGS]
+
