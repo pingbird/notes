@@ -2,9 +2,9 @@
 share: true
 ---
 
-# Opinions on Flutter
+# Flutter
 
-### Flutter good
+## Flutter Good
 
 I really like Flutter, it does so many things right.
 
@@ -18,7 +18,7 @@ The framework code is extremely high quality, and the team consistently holds th
 
 These positives come with some obvious drawbacks though, new features take forever to land and bugs are often left open for months due to the team having so much on their plate.
 
-### Rendering
+## Rendering
 
 Because rendering in browsers is done by an black-box web engine, CSS *has* to be bloated, otherwise lots of things would simply be impossible to build. What Flutter did to solve this problem was move rendering to userspace. The API is designed so well that you can change any aspect of rendering (other than compositing) from plain Dart.
 
@@ -26,7 +26,7 @@ Laying stuff out in Flutter is soooo simple when you get the hang of it, instead
 
 Oh and LayoutBuilder is amazing, no other UI framework can replicate it AFAIK.
 
-### Package Ecosystem
+## Package Ecosystem
 
 The Dart team invested a lot of time in promoting a healthy package ecosystem, specifically:
 
@@ -39,7 +39,7 @@ It's stunning that none of the largest package repositories (npm, pip, nuget, ma
 
 A few years ago I said the biggest weakness of Flutter was it being new and the lack of packages, but boy there has been an explosion in new ones lately.
 
-### State Management
+## State Management
 
 Lots of people complain about the lack of consensus on state management patterns, but its not that big of a deal, patterns like MVVM and MVC are irrelevant because of Flutter's declarative widget system.
 
@@ -55,7 +55,7 @@ I really dislike result types in Dart (such as from fpdart), in practice they do
 
 My opinions on reducers and result types might change if/when dart has macros and discriminated unions, these patterns are much easier to work with in languages that do, like Rust.
 
-### Future
+## Future
 
 I'm pretty confident it will surpass other UI frameworks because of the project's ability to consistently make successful long-term investments.
 
@@ -63,7 +63,7 @@ Re-implementing core widgets instead of using native ones is a good example of t
 
 Another example where long-term investments have paid off is Flutter's true hot reload that preserves full program state, other frameworks have primitive versions of hot reload which are inevitably going to be replaced with one similar to Dart's when the JS / Java / Swift runtimes implement it properly.
 
-### Performance
+## Performance
 
 Performance is a complicated topic, there are many small things that need to be addressed individually:
 
@@ -71,21 +71,21 @@ Performance is a complicated topic, there are many small things that need to be 
 	* This was mostly fixed on iOS and is much less noticeable on Android, in my experience building (very pretty) production apps it has never been a big issue. Impeller should fix any remaining issues with warmup.
 2. Web
 	* Yes the performance on web kinda sucks, I wouldn't use flutter web for most consumer web apps.
-	* No, using the DOM isn't a solution, the rendering pipeline of Flutter is fundamentally incompatible, LayoutBuilder is impossible in the web for example.
+	* No, the DOM isn't a solution, the rendering pipeline of Flutter is fundamentally incompatible, LayoutBuilder is impossible in the web for example.
 3. Compilation times
 	* Compilation times have gotten noticeably worse, particularly after Dart 2.0 and the migration to the CFE, I'm not sure what is going on there, would be really nice if it was faster.
 	* I don't have any numbers but anecdotally native Android seems slower at first (creating a new project, syncing gradle, etc.) but incremental compilation is a little faster.
 4. Rebuilds
-	* A common misconception that beginners have is that StatefulWidget is bad and you should avoid rebuilds at all costs, this is wrong, I should probably make a whole article on this. A rule of thumb is if something isn't likely to update every frame, don't bother optimizing for rebuild speed.
+	* A common misconception that beginners have is that StatefulWidget is bad and you should avoid rebuilds at all costs, this is wrong, I could make a whole article on this. A rule of thumb is if something isn't likely to update every frame, don't bother optimizing for rebuild speed.
 	* Rebuilding something does not mean it gets re-rendered, RenderObjects only mark themselves for needing layout or paint when the properties actually change, so a redundant rebuild can actually be super cheap.
 	* If you observe a slow rebuild causing jank during an animation, try implementing it in something more efficient like a CustomPainter with your Animation passed to `repaint`.
 	* Finally, if the build overhead is unavoidable and you just want consistent frame times, there is a package called flutter_smooth which does some clever stuff to preempt rendering.
-* Async
+5. Async
 	* I dunno, never experienced performance issues with async.
 	* There were some bad benchmarks GetX did that compared the performance of Stream, which may have been a source of confusion in the community.
 	* Ten times faster than nothing is still nothing, the overhead of a callback is on the scale of nanoseconds so a relative difference doesn't make a large impact to your program.
 
-### Flutter Web
+## Flutter Web
 
 Flutter web kinda sucks in a lot of aspects, it feels like you are using an emulator, the performance is often poor, it takes a long time to load, accessibility is nonexistent, SEO, no inspect element.
 
@@ -97,7 +97,7 @@ These problems are not isolated to Flutter, Qt also struggled with the same prob
 
 There is push from multiple directions to make the web more modular and WASM more performant, this will certainly get better in the coming years.
 
-### Macros / JSON
+## Macros / JSON
 
 Having to use build_runner to implement JSON serialization is certainly the most annoying thing I deal with day to day, and it is kinda ridiculous how long it's taking to implement alternatives.
 
