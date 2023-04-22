@@ -6,13 +6,13 @@ share: true
 
 ## Flutter Good
 
-I really like Flutter, it does so many things right.
+Flutter is an easy S tier, it does so many things right.
 
 I'm mostly going to be comparing Flutter with the web and Android since those are the environments I have the most experience in, but they also played a role in how Flutter was designed.
 
 It's clear that much of Flutter's core design came from the desire to fix shortcomings of the web, which is not a coincidence, Dart was created by the creators of V8 (such as Lars Bak) and Flutter was created by people responsible for the modern web (such as Ian Hickson, founder of WHATWG and chief editor of HTML5).
 
-The Flutter project has always played the long game, they have re-invented everything from the ground up to create an ecosystem that is cohesive and futureproof.
+The Flutter project has always played the long game, they re-invented everything from the ground up to create an ecosystem that is cohesive and futureproof.
 
 The framework code is extremely high quality, and the team consistently holds themselves to high engineering standards. The [style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo) on the Flutter wiki has a lot of good takes that shows their experience building software at scale.
 
@@ -25,6 +25,8 @@ Because rendering in browsers is done by an black-box web engine, CSS *has* to b
 Laying stuff out in Flutter is soooo simple when you get the hang of it, instead of having to memorize a dictionary's worth of css properties you can compose simple layout widgets to create complex layouts
 
 Oh and LayoutBuilder is amazing, no other UI framework can replicate it AFAIK.
+
+It *is* admittedly a pain in the butt to implement some layouts from scratch, I created the [Boxy](https://boxy.wiki/) package to overcome that.
 
 ## Package Ecosystem
 
@@ -51,7 +53,7 @@ FutureBuilder and StreamBuilder are admittedly super verbose and can't read valu
 
 I dislike redux style state management (actions / reducers on immutable data) it tends to be much too verbose because of Dart being strongly object oriented, using it over plain services with methods feels like a downgrade.
 
-I really dislike result types in Dart (such as from fpdart), in practice they do nothing to help error management, the codebase I've seen that uses them almost always ignore or rethrow Result errors in a fragile way.
+I really dislike result types in Dart (such as from fpdart), in practice they do nothing to help error management, the codebases that use them almost always ignore or rethrow Result errors in a fragile way.
 
 My opinions on reducers and result types might change if/when dart has macros and discriminated unions, these patterns are much easier to work with in languages that do, like Rust.
 
