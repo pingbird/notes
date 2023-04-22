@@ -6,10 +6,10 @@ share: true
 
 ## Done
 
-* Finished sanding all my keycaps .-.
+* Finish sanding all my keycaps .-.
 * Set up https://notes.tst.sh with S3 / CF / Route53 / CircleCI
+* Publish flutter opinion
 
 ## TODO
 
 * Iota deck
-* Publish flutter opinion
