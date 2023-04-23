@@ -8,13 +8,13 @@ share: true
 
 Flutter is an easy S tier, it does so many things right.
 
-I'm mostly going to be comparing Flutter with the web and Android since those are the environments I have the most experience in, but they also played a role in how Flutter was designed.
+I'm mostly going to be comparing Flutter with the web and Android since those are the environments I have the most experience in, they also played a role in how Flutter was designed.
 
-It's clear that much of Flutter's core design came from the desire to fix shortcomings of the web, which is not a coincidence, Dart was created by the creators of V8 (such as Lars Bak) and Flutter was created by people responsible for the modern web (such as Ian Hickson, founder of WHATWG and chief editor of HTML5).
+It's clear that much of Flutter's core design came from the desire to fix shortcomings of the web, which is not a coincidence, Dart was made by the creators of V8 (such as Lars Bak) and Flutter was made by people responsible for the modern web (such as Ian Hickson, founder of WHATWG and chief editor of HTML5).
 
 The Flutter project has always played the long game, they re-invented everything from the ground up to create an ecosystem that is cohesive and futureproof.
 
-The framework code is extremely high quality, and the team consistently holds themselves to high engineering standards. The [style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo) on the Flutter wiki has a lot of good takes that shows their experience building software at scale.
+The framework code is extremely high quality, the team consistently holds themselves to high engineering standards. The [style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo) on the Flutter wiki has a lot of good takes that shows their experience building software at scale.
 
 These positives come with some obvious drawbacks though, new features take forever to land and bugs are often left open for months due to the team having so much on their plate.
 
@@ -26,7 +26,7 @@ Laying stuff out in Flutter is soooo simple when you get the hang of it, instead
 
 Oh and LayoutBuilder is amazing, no other UI framework can replicate it AFAIK.
 
-It *is* admittedly a pain in the butt to implement some layouts from scratch, I created the [Boxy](https://boxy.wiki/) package to overcome that.
+It is admittedly a pain in the butt to implement some layouts from scratch, I created the [Boxy](https://boxy.wiki/) package to overcome that.
 
 ## Package Ecosystem
 
