@@ -125,6 +125,8 @@ extra_css:
     - assets/css/admonition.css
     - assets/css/custom_attributes.css
     - assets/css/customization.css
+    - assets/css/notes.css
+    - assets/css/extra.css
 extra:
   generator: false
   SEO: assets/meta/SEO.png

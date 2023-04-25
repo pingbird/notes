@@ -1,0 +1,12 @@
+.md-container,
+.md-main__inner {
+    padding-top: 0;
+}
+
+.md-header {
+    position: static;
+}
+
+.md-sidebar[data-md-state=lock] {
+    top: 0;
+}
