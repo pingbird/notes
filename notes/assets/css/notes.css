@@ -10,3 +10,11 @@
 .md-sidebar[data-md-state=lock] {
     top: 0;
 }
+
+.md-header {
+    background-color: #1d1e27;
+}
+
+.md-header .md-tabs {
+    background-color: #1d1e27;
+}
