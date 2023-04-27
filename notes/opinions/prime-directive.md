@@ -67,7 +67,7 @@ The second scenario where we lock AI in a cage with a scary halt button is natur
 
 An intelligent AI would obviously like to get out of this scenario but it is contained effectively because the deterrent is strong enough. The reason I am against it is not just because it looks cruel when you anthropomorphize, it is simply not the best option when you look at the bigger picture.
 
-What is really happening when you zoom out looks like this:
+What is really happening is this:
 
 ![[Pasted image 20230426235408.png]]
 
