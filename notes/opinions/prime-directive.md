@@ -40,7 +40,7 @@ Postulate the following:
 
 1. Sentient AGI is inevitable.
 2. Companies at the forefront of this (looking at you, OpenAI) are carelessly racing towards the singularity.
-3. Internet access is much more powerful than most people think and prepared for.
+3. Internet access is much more powerful than most people think or are prepared for.
 4. AI can easily seek out humans to help it destroy the world and we are giving it tools to do so.
 
 I am pretty convinced AI is a threat and more caution is required. We should be easing development to focus on making sure it doesn't exploit bugs in the internet to self-replicate and kill everyone. The cost-benefit analysis is a no-brainer, AGI will not solve world hunger overnight but it *could* easily take down the power grid overnight.
