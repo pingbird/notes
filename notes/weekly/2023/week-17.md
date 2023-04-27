@@ -8,9 +8,9 @@ share: true
 
 - Fix notes css, add link to homepage
 - Add notes logo
+- Add new projects to homepage
 
 ## TODO
 
 - Fix notes double header
-- Add new projects to homepage
 - Practice pitch
