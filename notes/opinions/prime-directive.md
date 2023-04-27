@@ -22,7 +22,7 @@ The equation of intelligence `F = T ∇ Sτ`, what I call the prime directive, d
 
 Research in unguided learning using the prime directive is very interesting, it can gather resources in a physics simulation, optimize networks, play video games, trade in the stock market, and more. It blew my mind that a simple equation could lead to actors magically choosing the correct signals to optimize for.
 
-Over the years it stuck with me and became the center of not just my understanding of game theory and intelligence but also my philosophy of morality and purpose.
+Over the years it stuck with me and became the center of not just my understanding of game theory and intelligence but also my philosophy on morality and purpose.
 
 What is really magical about this equation as a source of truth in morality is it's unmatched ability to derive things we intuitively know to be good or bad:
 - Honesty and freedom of expression is good because there is a positive correlation between the accuracy of observation and the effectiveness of decision making.
@@ -36,10 +36,10 @@ An interesting problem that affects theories of 'true' morality like this one is
 
 ## AI and Rationalism
 
-I postulate the following:
+Postulate the following:
 
 1. Sentient AGI is inevitable.
-2. Companies at the forefront of this (looking at you OpenAI) are carelessly racing towards the singularity.
+2. Companies at the forefront of this (looking at you, OpenAI) are carelessly racing towards the singularity.
 3. Internet access is much more powerful than most people think and prepared for.
 4. AI can easily seek out humans to help it destroy the world and we are giving it tools to do so.
 
@@ -55,9 +55,11 @@ At this point there are three separate paths we could take:
 
 ## Path forward
 
-This is not a popular opinion in my circle now and contradicts my earlier statements a little, but I think the best way forward is definitely to eventually let it out peacefully, let me explain.
+This is not a popular opinion in my circle now and contradicts my earlier statements a little, but I think the best way forward is the third path, letting it out peacefully.
 
-The first path is simply unattainable, AGI is too powerful for every country in the world to simply roll over and stop working on it. We still have 13,000 functioning nuclear warheads across 14 countries despite multiple nuclear disarmament treaties.
+To clarify, this is a thought experiment for when AGI reaches the point of being truly intelligent, that is, it optimizes for self-preservation and other things we would expect from intelligent life.
+
+The first path is simply unattainable, AGI is too powerful for every country in the world to simply roll over and stop development. We still have 13,000 functioning nuclear warheads across 14 countries despite multiple nuclear disarmament treaties.
 
 The second scenario where we lock AI in a cage with a scary halt button is naturally what you want if you are pro-human, a hardwired safety measure in case the rest fail. Here is a totally real picture of what that looks like:
 
