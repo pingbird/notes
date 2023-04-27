@@ -39,7 +39,7 @@ The Dart team invested a lot of time in promoting a healthy package ecosystem, s
 
 It's stunning that none of the largest package repositories (npm, pip, nuget, maven) have unified package documentation, I should not have to read source code or crawl through tutorials to know what classes I can use.
 
-A few years ago I said the biggest weakness of Flutter was it being new and the lack of packages, but boy there has been an explosion in new ones lately.
+A few years ago I said the biggest weakness of Flutter was it being new and the lack of packages, but boy there has been an explosion in new packages lately so that probably isn't true anymore.
 
 ## State Management
 
