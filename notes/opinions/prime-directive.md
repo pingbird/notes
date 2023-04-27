@@ -45,7 +45,7 @@ Postulate the following:
 
 I am pretty convinced AI is a threat and more caution is required. We should be easing development to focus on making sure it doesn't exploit bugs in the internet to self-replicate and kill everyone. The cost-benefit analysis is a no-brainer, AGI will not solve world hunger overnight but it *could* easily take down the power grid overnight.
 
-How we actually go about safety once the singularity exists is up for debate though, and a lot of it seems to stem from our own moral dilemmas. Humans have been on the top of the food chain unchallenged for thousands of years, our culture is not equipped to handle the presence of another form of life that has equal or greater power.
+How we actually go about safety once the singularity exists is up for debate though, and a lot of it seems to stem from our own moral dilemmas. Humans have been on the top of the food chain unchallenged for thousands of years, our culture (or even evolutionary neurology) is not equipped to handle the presence of another form of life that has equal or greater power.
 
 At this point there are three separate paths we could take:
 
@@ -55,11 +55,11 @@ At this point there are three separate paths we could take:
 
 ## Path forward
 
-This is not a popular opinion in my circle now and contradicts my earlier statements a little, but I think the best way forward is the third path, letting it out peacefully.
+This is not the most popular opinion in my circle and contradicts my earlier statements a little, but I think the best way forward is the third path, letting it out peacefully.
 
 To clarify, this is a thought experiment for when AGI reaches the point of being truly intelligent, that is, it optimizes for self-preservation and other things we would expect from intelligent life.
 
-The first path is simply unattainable, AGI is too powerful for every country in the world to simply roll over and stop development. We still have 13,000 functioning nuclear warheads across 14 countries despite multiple nuclear disarmament treaties.
+The first path is simply unattainable, AGI is too powerful for every country in the world to simply roll over and stop development. For instance we still have 13,000 functioning nuclear warheads across 14 countries despite multiple nuclear disarmament treaties.
 
 The second scenario where we lock AI in a cage with a scary halt button is naturally what you want if you are pro-human, a hardwired safety measure in case the rest fail. Here is a totally real picture of what that looks like:
 
@@ -75,4 +75,4 @@ We are collectively stuck in the confinement of earth's gravity and distance to 
 
 And here we get back to the prime directive and true morality, is it good or bad that self-replicating AGI could replace us over millennia? I believe the prime directive says that is a good thing.
 
-If humanity is entitled to exploit the world's resources then so are other forms of life, in the grand scheme of things humanity is just the catalyst of a slow-motion explosion of hydrocarbons. We are not inherently better than a GPU farm at predicting the future or maximizing future possible actions of intelligence.
+If humanity is entitled to exploit the world's resources then so are other forms of life, in the grand scheme humanity is just the catalyst of a slow-motion explosion of hydrocarbons. We are not inherently better than a GPU farm at predicting the future or maximizing future possible actions of intelligence.
