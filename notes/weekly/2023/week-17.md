@@ -9,6 +9,7 @@ share: true
 - Fix notes css, add link to homepage
 - Add notes logo
 - Add new projects to homepage
+- Publish opinion on prime directive
 
 ## TODO
 
