@@ -42,7 +42,7 @@ theme:
         - navigation.instant
         - toc.follow
         - content.code.annotate
-        
+
 # Extensions
 markdown_extensions:
   - footnotes
@@ -85,6 +85,12 @@ plugins:
   - search
   - meta-descriptions
   - meta
+  - mkdocs-video:
+      is_video: true
+      video_autoplay: false
+      css_style:
+        width: ""
+        height: ""
   - git-revision-date-localized:
       type: date
       fallback_to_build_date: true
@@ -97,6 +103,7 @@ plugins:
   - embed_file:
       callouts: true
       custom-attributes: 'assets/css/custom_attributes.css'
+      language_message: 'not found'
   - custom-attributes:
       file: 'assets/css/custom_attributes.css'
   - tags:
