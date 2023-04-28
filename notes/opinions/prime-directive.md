@@ -1,8 +1,7 @@
 ---
 share: true
+title: "Prime Directive"
 ---
-
-# Prime Directive
 
 ## Morality
 
@@ -76,3 +75,4 @@ We are collectively stuck in the confinement of earth's gravity and distance to 
 And here we get back to the prime directive and true morality, is it good or bad that self-replicating AGI could replace us over millennia? I believe the prime directive says that is a good thing.
 
 If humanity is entitled to exploit the world's resources then so are other forms of life, in the grand scheme humanity is just the catalyst of a slow-motion explosion of hydrocarbons. We are not inherently better than a GPU farm at predicting the future or maximizing future possible actions of intelligence.
+
