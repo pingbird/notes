@@ -10,8 +10,9 @@ share: true
 - Add notes logo
 - Add new projects to homepage
 - Publish opinion on prime directive
+- Fix notes double header
 
 ## TODO
 
-- Fix notes double header
 - Practice pitch
+- Push puro release
