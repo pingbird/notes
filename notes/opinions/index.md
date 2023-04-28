@@ -1,7 +1,6 @@
 ---
 share: true
+title: "Opinions"
 ---
-
-# Opinions
 
 Disregard everything in this section.
