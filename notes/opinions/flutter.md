@@ -1,8 +1,7 @@
 ---
 share: true
+title: "Flutter"
 ---
-
-# Flutter
 
 ## Flutter Good
 
