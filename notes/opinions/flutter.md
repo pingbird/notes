@@ -27,6 +27,10 @@ Oh and LayoutBuilder is amazing, no other UI framework can replicate it AFAIK.
 
 It is admittedly a pain in the butt to implement some layouts from scratch, I created the [Boxy](https://boxy.wiki/) package to overcome that.
 
+## API Design
+
+The APIs that are exposed by dart and flutter are excellent, 
+
 ## Package Ecosystem
 
 The Dart team invested a lot of time in promoting a healthy package ecosystem, specifically:

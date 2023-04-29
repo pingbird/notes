@@ -16,3 +16,4 @@ share: true
 
 - Practice pitch
 - Push puro release
+- Finish keyboard opinion
