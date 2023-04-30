@@ -1,6 +1,6 @@
 ---
 share: true
-title: "Flutter"
+title: "Flutter and Dart"
 ---
 
 ## Flutter Good
@@ -21,17 +21,17 @@ These positives come with some obvious drawbacks though, new features take forev
 
 Because rendering in browsers is done by an black-box web engine, CSS *has* to be bloated, otherwise lots of things would simply be impossible to build. What Flutter did to solve this problem was move rendering to userspace. The API is designed so well that you can change any aspect of rendering (other than compositing) from plain Dart.
 
-Laying stuff out in Flutter is soooo simple when you get the hang of it, instead of having to memorize a dictionary's worth of css properties you can compose simple layout widgets to create complex layouts
+Laying stuff out in Flutter is soooo simple when you get the hang of it, instead of having to memorize a dictionary's worth of css properties you can compose multiple simple layout widgets to create complex layouts, and encapsulate it in a custom widget.
 
 Oh and LayoutBuilder is amazing, no other UI framework can replicate it AFAIK.
 
-It is admittedly a pain in the butt to implement some layouts from scratch, I created the [Boxy](https://boxy.wiki/) package to overcome that.
+It is admittedly a pain in the butt to implement some layouts from scratch, I created the popular [Boxy](https://boxy.wiki/) package to overcome that.
 
 ## API Design
 
 The APIs that are exposed by Dart and Flutter are excellent, I am rarely disappointed in the way things are named and organized, it's all very natural.
 
-One thing you'll probably relate to is how most I/O APIs built into programming languages are basically 1:1 copies of the Linux API with cheap tricks to emulate Linux behavior on Windows / OSX. What Dart did instead was essentially create 3 different APIs with a different balance of functionality and ease of use:
+One thing you'll probably relate to is how most I/O APIs built into programming languages are basically 1:1 copies of the Linux API with cheap tricks to emulate behavior on Windows / OSX. What Dart did instead was essentially create 3 different APIs with a different balance of functionality and ease of use:
 
 1. One liners: [File.readAsBytes](https://api.dart.dev/stable/2.19.6/dart-io/File/readAsBytes.html), [File.writeAsBytes](https://api.dart.dev/stable/2.19.6/dart-io/File/writeAsBytes.html), [File.readAsString](https://api.dart.dev/stable/2.19.6/dart-io/File/readAsString.html), [File.writeAsString](https://api.dart.dev/stable/2.19.6/dart-io/File/writeAsString.html), [File.readAsLines](https://api.dart.dev/stable/2.19.6/dart-io/File/readAsLines.html)
 2. Streamed: [File.openRead](https://api.dart.dev/stable/2.19.6/dart-io/File/openRead.html) which returns a `Stream<List<int>>` and [File.openWrite](https://api.dart.dev/stable/2.19.6/dart-io/File/openWrite.html) which returns an [IOSink](https://api.dart.dev/stable/2.19.6/dart-io/IOSink-class.html) (same as [stderr](https://api.dart.dev/stable/2.19.6/dart-io/stderr.html) / [stdout](https://api.dart.dev/stable/2.19.6/dart-io/stdout.html), extends `StreamSink<List<int>>`)
@@ -58,14 +58,15 @@ void main() async {
 }
 ```
 
-The expressiveness of `File('birb.jpg').openRead().pipe(client.response);` is why I love Streams in Dart so much, it has all of the correct behavior I want:
+The expressiveness of `File('birb.jpg').openRead().pipe(client.response);` is why I love using Streams so much, it has all of the correct behavior I want:
 
 1. Sending happens asynchronously in the background because `await` is omitted, allowing multiple requests to be processed concurrently
 2. No race conditions between creating the stream with [openRead](<[openRead](https://api.dart.dev/stable/2.19.6/dart-io/File/openRead.html)>) and [pipe](https://api.flutter.dev/flutter/dart-async/Stream/pipe.html) listening to it, this is all single-subscription
 3. It is suitable for very large files because openRead reads the file in chunks rather than the entire thing in-memory at once
-4. Slow clients won't cause the file chunks to be buffered in memory more than necessary, when the socket's send buffer is full it pauses the pipe's [StreamSubscription](https://api.dart.dev/stable/2.19.6/dart-async/StreamSubscription-class.html), which causes openRead to stop reading new chunks
+4. Closing the socket also closes the file
+5. Slow clients won't cause the file chunks to be buffered in memory more than necessary, when the socket's send buffer is full it pauses the pipe's [StreamSubscription](https://api.dart.dev/stable/2.19.6/dart-async/StreamSubscription-class.html), which causes openRead to stop reading new chunks
 
-The last one is particularly difficult to do by hand in other languages because it requires a state machine that the producer has to react to, a really common thing that gets overlooked. It is also very common to see Stream implementations (e.g. node.js) that are multi-subscription, which have severe problems like new listeners not getting old values and memory leaks from dangling IO callbacks.
+The last one is particularly difficult to do in other languages because it requires a state machine that the producer has to react to, a really common thing that gets overlooked. It is also very common to see Stream implementations (e.g. node.js) that are multi-subscription, which have severe problems like new listeners not getting old values and memory leaks from dangling IO callbacks.
 
 ## Package Ecosystem
 
@@ -88,7 +89,7 @@ Just pick an architecture you are productive with and roll with it. My advice is
 
 Personally I use Riverpod for DI, a custom [improved version of hooks](https://gist.github.com/PixelToast/8ea4495637a366f340a3eca8bf528388), and rxdart. Built-in Futures and Streams are an underrated tool for state management, particularly when it comes to error handling.
 
-FutureBuilder and StreamBuilder are admittedly super verbose and can't read values synchronously from an rxdart ValueStream, if you are looking for a drop-in replacement try the async_builder package.
+FutureBuilder and StreamBuilder are admittedly super verbose and can't read values synchronously from an rxdart ValueStream, if you are looking for a drop-in replacement try my [async_builder](https://pub.dev/packages/async_builder) package.
 
 I dislike redux style state management (actions / reducers on immutable data) it tends to be much too verbose because of Dart being strongly object oriented, using it over plain services with methods feels like a downgrade.
 
@@ -144,4 +145,4 @@ Having to use build_runner to implement JSON serialization is certainly the most
 
 Our savior is [macros](https://github.com/dart-lang/language/blob/main/working/macros/feature-specification.md), a language proposal that will replace all of the dirty code generators we rely on today.
 
-Personally I don't think it's enough though, I want to write plugins that directly interact with the AST in the CFE and maybe even add custom tokens to fasta.
+Personally I don't think macros are enough though, I want to write plugins that directly interact with the AST in the CFE and maybe even add custom tokens to fasta.
