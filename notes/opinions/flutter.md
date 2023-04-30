@@ -29,7 +29,43 @@ It is admittedly a pain in the butt to implement some layouts from scratch, I cr
 
 ## API Design
 
-The APIs that are exposed by dart and flutter are excellent, 
+The APIs that are exposed by Dart and Flutter are excellent, I am rarely disappointed in the way things are named and organized, it's all very natural.
+
+One thing you'll probably relate to is how most I/O APIs built into programming languages are basically 1:1 copies of the Linux API with cheap tricks to emulate Linux behavior on Windows / OSX. What Dart did instead was essentially create 3 different APIs with a different balance of functionality and ease of use:
+
+1. One liners: [File.readAsBytes](https://api.dart.dev/stable/2.19.6/dart-io/File/readAsBytes.html), [File.writeAsBytes](https://api.dart.dev/stable/2.19.6/dart-io/File/writeAsBytes.html), [File.readAsString](https://api.dart.dev/stable/2.19.6/dart-io/File/readAsString.html), [File.writeAsString](https://api.dart.dev/stable/2.19.6/dart-io/File/writeAsString.html), [File.readAsLines](https://api.dart.dev/stable/2.19.6/dart-io/File/readAsLines.html)
+2. Streamed: [File.openRead](https://api.dart.dev/stable/2.19.6/dart-io/File/openRead.html) which returns a `Stream<List<int>>` and [File.openWrite](https://api.dart.dev/stable/2.19.6/dart-io/File/openWrite.html) which returns an [IOSink](https://api.dart.dev/stable/2.19.6/dart-io/IOSink-class.html) (same as [stderr](https://api.dart.dev/stable/2.19.6/dart-io/stderr.html) / [stdout](https://api.dart.dev/stable/2.19.6/dart-io/stdout.html), extends `StreamSink<List<int>>`)
+3. Random access: [File.open](https://api.dart.dev/stable/2.19.6/dart-io/File/open.html) which returns [RandomAccessFile](https://api.dart.dev/stable/2.19.6/dart-io/RandomAccessFile-class.html) and gives you all of the functionality of a real file handle like flushing and nasty platform-specific partial locking.
+
+We can compare this to go's less thought out (to put it lightly) filesystem API: https://pkg.go.dev/io/fs@go1.20.3 which has no streaming, has awkward error handling, and treats the quirks of Linux as a first class feature.
+
+Let's say you wanted to do something simple like build an http server from scratch that serves a cute bird picture. This is trivial because of Streams and the File API:
+
+```dart
+import 'dart:io';
+
+void main() async {
+  final server = await HttpServer.bind(InternetAddress.loopbackIPv4, 621);
+  await for (final client in server) {
+    if (client.uri.path == '/' && client.method == 'GET') {
+      client.response.headers.add('content-type', 'image/jpeg');
+      File('birb.jpg').openRead().pipe(client.response);
+    } else {
+      client.response.statusCode = 400;
+      client.response.close();
+    }
+  }
+}
+```
+
+The expressiveness of `File('birb.jpg').openRead().pipe(client.response);` is why I love Streams in Dart so much, it has all of the correct behavior I want:
+
+1. Sending happens asynchronously in the background because `await` is omitted, allowing multiple requests to be processed concurrently
+2. No race conditions between creating the stream with [openRead](<[openRead](https://api.dart.dev/stable/2.19.6/dart-io/File/openRead.html)>) and [pipe](https://api.flutter.dev/flutter/dart-async/Stream/pipe.html) listening to it, this is all single-subscription
+3. It is suitable for very large files because openRead reads the file in chunks rather than the entire thing in-memory at once
+4. Slow clients won't cause the file chunks to be buffered in memory more than necessary, when the socket's send buffer is full it pauses the pipe's [StreamSubscription](https://api.dart.dev/stable/2.19.6/dart-async/StreamSubscription-class.html), which causes openRead to stop reading new chunks
+
+The last one is particularly difficult to do by hand in other languages because it requires a state machine that the producer has to react to, a really common thing that gets overlooked. It is also very common to see Stream implementations (e.g. node.js) that are multi-subscription, which have severe problems like new listeners not getting old values and memory leaks from dangling IO callbacks.
 
 ## Package Ecosystem
 

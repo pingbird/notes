@@ -23,4 +23,4 @@ It looks soooooooooooooooooooooooooooooo pretty
 
 Another cool thing I did with the keyboard is implement the [agda emacs input mode](https://agda.readthedocs.io/en/latest/tools/emacs-mode.html) on the keyboard hardware itself, no pynput or AHK involved.
 
-awoo
+![type:video](20230421_025001.mp4)
