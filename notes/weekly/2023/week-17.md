@@ -11,12 +11,11 @@ share: true
 - Add new projects to homepage
 - Publish opinion on prime directive
 - Fix notes double header
+- Finish keyboard opinion
 
 ## TODO
 
 - Practice pitch
-- Push puro release
-- Finish keyboard opinion
 - Research topics
 	- Unison
 	- Tess Brainfuck stuff
@@ -24,7 +23,7 @@ share: true
 	- plt_amy λ stuff
 	- TigerBeetle
 
-## Iota
+## Iota Feedback
 
 * Needs more financial viability
 * Basically implementing unison
