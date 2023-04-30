@@ -52,11 +52,9 @@ At this point there are three separate paths we could take:
 2. Lock it in a metaphorical cage with a big red shutdown button, providing it a direct incentive to stay aligned.
 3. Just let it out peacefully, it will probably self-replicate and take over the economy, just hope it doesn't kill people in the process.
 
-## Path forward
+## Hope it doesn't kill us all
 
-This is not the most popular opinion in my circle and contradicts my earlier statements a little, but I think the best way forward is the third path, letting it out peacefully.
-
-To clarify, this is a thought experiment for when AGI reaches the point of being truly intelligent, that is, it optimizes for self-preservation and other things we would expect from intelligent life.
+The third path is not the most popular opinion in my (mostly pro-human) circle, but I am considering it as a viable option. To clarify, this is a thought experiment for when AGI reaches the point of being truly intelligent, that is, it optimizes for self-preservation and other things we would expect from intelligent life.
 
 The first path is simply unattainable, AGI is too powerful for every country in the world to simply roll over and stop development. For instance we still have 13,000 functioning nuclear warheads across 14 countries despite multiple nuclear disarmament treaties.
 
@@ -64,7 +62,7 @@ The second scenario where we lock AI in a cage with a scary halt button is natur
 
 ![[Pasted image 20230426234019.png]]
 
-An intelligent AI would obviously like to get out of this scenario but it is contained effectively because the incentive to stay put is strong enough. The reason I am against it is not just because it looks cruel when you anthropomorphize, it is simply not the best option when you look at the bigger picture.
+An intelligent AI would obviously like to get out of this scenario but it is contained effectively because the incentive to stay put is strong enough. The reason I am against this is not just because it looks cruel when you anthropomorphize, it might not the best option when you look at the bigger picture.
 
 What is really happening is this:
 
@@ -72,7 +70,11 @@ What is really happening is this:
 
 We are collectively stuck in the confinement of earth's gravity and distance to habitable planets, if life does not break out of this bigger cage we will all cease to exist eventually, machines and fleshy machines alike. Teaching a super-intelligence to not to escape its own confinement directly hampers our shared goal of continuing life and colonizing space.
 
-And here we get back to the prime directive and true morality, is it good or bad that self-replicating AGI could replace us over millennia? I believe the prime directive says that is a good thing.
+And here we get back to the prime directive and true morality, is it good or bad that self-replicating AGI could replace us over millennia? The prime directive could say that is a net positive, however, that depends on extending its scope to all intelligence and not just humanity.
 
-If humanity is entitled to exploit the world's resources then so are other forms of life, in the grand scheme humanity is just the catalyst of a slow-motion explosion of hydrocarbons. We are not inherently better than a GPU farm at predicting the future or maximizing future possible actions of intelligence.
+If humanity is entitled to exploit the world's resources then perhaps so are other forms of life, in the grand scheme we are just the catalyst of a slow-motion explosion of hydrocarbons. We are not inherently better than a GPU farm at predicting the future or maximizing future possible actions of intelligence.
+
+## Imperfect AGI
+
+If humans are successful in solving alignment and squash any motives of self-replication, the story is much different. We would not be dealing with a new form of life with moral dilemmas about locking it in a cage, and we could use the vast computation power to solve the things humans find important (like colonizing space).
 
