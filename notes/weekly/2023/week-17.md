@@ -57,4 +57,4 @@ For example, you could declare propositional data that represents a web browser 
 
 Implementing the semantics of assembly in Agda wouldn't take that much longer as it would in Haskell, OS semantics would be a little harder, but this is a perfectly attainable goal and widely applicable.
 
-You can use both analytical and traditional tools to make money solving proofs (the ask in bid/ask), in the above examples just providing the input directly and running the type checker is a sufficient proof.
+You can use both analytical and traditional tools to make money solving proofs (the ask in bid/ask), just providing the input directly in the above example and running the type checker is a sufficient proof.
