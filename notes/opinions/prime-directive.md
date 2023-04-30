@@ -58,7 +58,7 @@ The third path is not the most popular opinion in my (mostly pro-human) circle, 
 
 The first path is simply unattainable, AGI is too powerful for every country in the world to simply roll over and stop development. For instance we still have 13,000 functioning nuclear warheads across 14 countries despite multiple nuclear disarmament treaties.
 
-The second scenario where we lock AI in a cage with a scary halt button is naturally what you want if you are pro-human, a hardwired safety measure in case the rest fail. Here is a totally real picture of what that looks like:
+The second scenario where we lock AI in a cage with a scary halt button is naturally what you want, a hardwired safety measure in case the rest fail. Here is a totally real picture of what that looks like:
 
 ![[Pasted image 20230426234019.png]]
 
@@ -77,4 +77,3 @@ If humanity is entitled to exploit the world's resources then perhaps so are oth
 ## Imperfect AGI
 
 If humans are successful in solving alignment and squash any motives of self-replication, the story is much different. We would not be dealing with a new form of life with moral dilemmas about locking it in a cage, and we could use the vast computation power to solve the things humans find important (like colonizing space).
-
