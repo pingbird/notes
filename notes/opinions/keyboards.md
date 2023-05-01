@@ -23,7 +23,7 @@ It looks soooooooooooooooooooooooooooooo pretty.
 
 ## Unicode
 
-Another cool thing I did with the keyboard is implement the [agda emacs input mode](https://agda.readthedocs.io/en/latest/tools/emacs-mode.html) on the keyboard hardware itself, no pynput or AHK involved. This is extremely useful for writing proofs outside of emacs or an editor with TeX.
+Another cool thing I did with the keyboard is implement the [agda emacs input mode](https://agda.readthedocs.io/en/latest/tools/emacs-mode.html) on the hardware itself, no pynput or AHK involved. This is extremely useful for writing proofs outside of emacs or an editor with TeX.
 
 ![type:video](20230421_025001.mp4)
 
@@ -33,10 +33,11 @@ It has some cool features which are not possible with built-in composition:
 * Most of the ergonomics of the emacs input mode 
 * Supports Windows (WinCompose) / Mac / Linux, see QMK's [Unicode Support](https://github.com/qmk/qmk_firmware/blob/master/docs/feature_unicode.md) docs
 * OS auto-detection mostly stolen from [u/kapij](https://www.reddit.com/r/olkb/comments/x1ezbg/way_to_detect_host_os_in_qmk/) which was [merged into main](https://github.com/qmk/qmk_firmware/blob/master/docs/feature_os_detection.md) but didn't roll into Keychron's fork until recently
+* Finish query with enter key or pressing unmapped character
 * Cycling with left and right arrow keys
 * History with up and down arrow keys
-* Print usage with F1
+* Print query with F1 (works with history for a reverse-query)
 * Backlight hints (blue is a tree and green is a leaf)
-* Sticky prefix with F2, this allows you to lock in a prefix like ` ^ ` (superscript) and holding down \\ for ¹²³⁴⁵⁶ᵃᵈᶠᵍʰʲ, or even `MI` (bold italics) 𝒕𝒐 𝒒𝒖𝒊𝒄𝒌𝒍𝒚 𝒕𝒚𝒑𝒆 𝒄𝒖𝒓𝒔𝒆𝒅 𝒕𝒆𝒙𝒕 𝒍𝒊𝒌𝒆 𝒕𝒉𝒊𝒔
+* Sticky prefix with F2, this allows you to lock in a prefix like ^ (superscript) and holding down \\ for ¹²³⁴⁵⁶ᵃᵈᶠᵍʰʲ, or even `MI` (bold italics) 𝒕𝒐 𝒒𝒖𝒊𝒄𝒌𝒍𝒚 𝒕𝒚𝒑𝒆 𝒄𝒖𝒓𝒔𝒆𝒅 𝒕𝒆𝒙𝒕 𝒍𝒊𝒌𝒆 𝒕𝒉𝒊𝒔
 
 This was done with over a thousand lines of [QMK](https://github.com/Keychron/qmk_firmware/tree/bluetooth_playground/keyboards/keychron/k3_pro) C code and a Dart script to convert the word to codepoint multimap to a flat tree data structure.
