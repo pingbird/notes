@@ -5,7 +5,7 @@ title: "Keyboards"
 
 ## K3 Pro
 
-A few months ago I got my first keyboard that supports custom firmware, the [Keychron K3 Pro](https://www.keychron.com/products/keychron-k3-pro-qmk-via-wireless-custom-mechanical-keyboard) and it's really good. The layout is nice and has a function row unlike the K7, it was a little annoying having to do shift-fn-\` to type tildes along with some IDE binds like fn-shift-6 for refactoring.
+A few months ago I got my first keyboard that supports custom firmware, the [Keychron K3 Pro](https://www.keychron.com/products/keychron-k3-pro-qmk-via-wireless-custom-mechanical-keyboard) and it's really good. The layout is nice and has a function row unlike the K7, it was a little annoying having to do shift-fn-grave to type tildes along with some IDE binds like fn-shift-6 for refactoring.
 
 Out of the box the RGB on the K3 pro sucks, the (otherwise high quality) keycaps it comes with are opaque and have a wide base which blocks out the light, also the maximum brightness is ridiculously low.
 
