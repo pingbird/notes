@@ -17,6 +17,8 @@ Maybe survival of our species is not fundamental enough, what is good about incr
 
 When I was little I watched a lot of documentaries and ted talks on DVD (thank you mom), one of them was called [A new equation for intelligence](https://www.ted.com/talks/alex_wissner_gross_a_new_equation_for_intelligence). 
 
+![type:video](https://www.youtube.com/watch?v=ue2ZEmTJ_Xo)
+
 The equation of intelligence `F = T ∇ Sτ`, what I call the prime directive, declares a force `F` which is equal to the direction of increasing entropy. We equate this to intelligence, a more intelligent actor will maximize possible future action and a less intelligent actor will do the opposite.
 
 Research in unguided learning using the prime directive is very interesting, it can gather resources in a physics simulation, optimize networks, play video games, trade in the stock market, and more. It blew my mind that a simple equation could lead to actors magically choosing the correct signals to optimize for.
