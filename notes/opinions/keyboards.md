@@ -37,6 +37,6 @@ It has some cool features which are not possible with built-in composition:
 * History with up and down arrow keys
 * Print usage with F1
 * Backlight hints (blue is a tree and green is a leaf)
-* Sticky prefix with F2, this allows you to lock in a prefix like ^ (superscript) and holding down \\ for ¹²³⁴⁵⁶ᵃᵈᶠᵍʰʲ, or even `MI` (bold italics) 𝒕𝒐 𝒒𝒖𝒊𝒄𝒌𝒍𝒚 𝒕𝒚𝒑𝒆 𝒄𝒖𝒓𝒔𝒆𝒅 𝒕𝒆𝒙𝒕 𝒍𝒊𝒌𝒆 𝒕𝒉𝒊𝒔
+* Sticky prefix with F2, this allows you to lock in a prefix like ` ^ ` (superscript) and holding down \\ for ¹²³⁴⁵⁶ᵃᵈᶠᵍʰʲ, or even `MI` (bold italics) 𝒕𝒐 𝒒𝒖𝒊𝒄𝒌𝒍𝒚 𝒕𝒚𝒑𝒆 𝒄𝒖𝒓𝒔𝒆𝒅 𝒕𝒆𝒙𝒕 𝒍𝒊𝒌𝒆 𝒕𝒉𝒊𝒔
 
 This was done with over a thousand lines of [QMK](https://github.com/Keychron/qmk_firmware/tree/bluetooth_playground/keyboards/keychron/k3_pro) C code and a Dart script to convert the word to codepoint multimap to a flat tree data structure.
