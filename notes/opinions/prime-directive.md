@@ -17,7 +17,7 @@ Maybe survival of our species is not fundamental enough, what is good about incr
 
 When I was little I watched a lot of documentaries and ted talks on DVD (thank you mom), one of them was called [A new equation for intelligence](https://www.ted.com/talks/alex_wissner_gross_a_new_equation_for_intelligence). 
 
-![type:video](https://www.youtube.com/watch?v=ue2ZEmTJ_Xo)
+<iframe seamless style="aspect-ratio: 16/9; width: 100%" src="https://www.youtube.com/embed/ue2ZEmTJ_Xo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 The equation of intelligence `F = T ∇ Sτ`, what I call the prime directive, declares a force `F` which is equal to the direction of increasing entropy. We equate this to intelligence, a more intelligent actor will maximize possible future action and a less intelligent actor will do the opposite.
 
@@ -48,7 +48,7 @@ I am pretty convinced AI is a threat and more caution is required. We should be 
 
 How we actually go about safety once the singularity exists is up for debate though, and a lot of it seems to stem from our own moral dilemmas. Humans have been on the top of the food chain unchallenged for thousands of years, our culture (or even evolutionary neurology) is not equipped to handle the presence of another form of life that has equal or greater power.
 
-At this point there are three separate paths we could take:
+At this point there are three different paths we could take:
 
 1. Effectively kill AI by passing laws to restrict the performance of neural networks.
 2. Lock it in a metaphorical cage with a big red shutdown button, providing it a direct incentive to stay aligned.
