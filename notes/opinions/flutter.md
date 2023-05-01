@@ -39,7 +39,7 @@ One thing you'll probably relate to is how most I/O APIs built into programming 
 
 We can compare this to go's less thought out (to put it lightly) filesystem API: https://pkg.go.dev/io/fs@go1.20.3 which has no streaming, has awkward error handling, and treats the quirks of Linux as a first class feature.
 
-Let's say you wanted to do something simple like build an http server from scratch that serves a cute bird picture. This is trivial because of Streams and the File API:
+Let's say you wanted to do something simple like build an http server from scratch that serves a cute bird picture. This is trivial because of [Stream](https://api.dart.dev/stable/2.19.6/dart-async/Stream-class.html) and the File API:
 
 ```dart
 import 'dart:io';
@@ -61,7 +61,7 @@ void main() async {
 The expressiveness of `File('birb.jpg').openRead().pipe(client.response);` is why I love using Streams so much, it has all of the correct behavior I want:
 
 1. Sending happens asynchronously in the background because `await` is omitted, allowing multiple requests to be processed concurrently
-2. No race conditions between creating the stream with [openRead](<[openRead](https://api.dart.dev/stable/2.19.6/dart-io/File/openRead.html)>) and [pipe](https://api.flutter.dev/flutter/dart-async/Stream/pipe.html) listening to it, this is all single-subscription
+2. No race conditions between creating the stream with [openRead](https://api.dart.dev/stable/2.19.6/dart-io/File/openRead.html) and [pipe](https://api.flutter.dev/flutter/dart-async/Stream/pipe.html) listening to it, this is all single-subscription
 3. It is suitable for very large files because openRead reads the file in chunks rather than the entire thing in-memory at once
 4. Closing the socket also closes the file
 5. Slow clients won't cause the file chunks to be buffered in memory more than necessary, when the socket's send buffer is full it pauses the pipe's [StreamSubscription](https://api.dart.dev/stable/2.19.6/dart-async/StreamSubscription-class.html), which causes openRead to stop reading new chunks
@@ -113,7 +113,7 @@ Performance is a complicated topic, there are many small things that need to be 
 	* This was mostly fixed on iOS and is much less noticeable on Android, in my experience building (very pretty) production apps it has never been a big issue. Impeller should fix any remaining issues with warmup.
 2. Web
 	* Yes the performance on web kinda sucks, I wouldn't use flutter web for most consumer web apps.
-	* No, the DOM isn't a solution, the rendering pipeline of Flutter is fundamentally incompatible, LayoutBuilder is impossible in the web for example.
+	* No, using the DOM like other web frameworks isn't a solution, the rendering pipeline of Flutter is fundamentally incompatible, LayoutBuilder is impossible in the web for example.
 3. Compilation times
 	* Compilation times have gotten noticeably worse, particularly after Dart 2.0 and the migration to the CFE, I'm not sure what is going on there, would be really nice if it was faster.
 	* I don't have any numbers but anecdotally native Android seems slower at first (creating a new project, syncing gradle, etc.) but incremental compilation is a little faster.
@@ -121,7 +121,7 @@ Performance is a complicated topic, there are many small things that need to be 
 	* A common misconception that beginners have is that StatefulWidget is bad and you should avoid rebuilds at all costs, this is wrong, I could make a whole article on this. A rule of thumb is if something isn't likely to update every frame, don't bother optimizing for rebuild speed.
 	* Rebuilding something does not mean it gets re-rendered, RenderObjects only mark themselves for needing layout or paint when the properties actually change, so a redundant rebuild can actually be super cheap.
 	* If you observe a slow rebuild causing jank during an animation, try implementing it in something more efficient like a CustomPainter with your Animation passed to `repaint`.
-	* Finally, if the build overhead is unavoidable and you just want consistent frame times, there is a package called flutter_smooth which does some clever stuff to preempt rendering.
+	* Finally, if the build overhead is unavoidable and you just want consistent frame times, there is a package called [flutter_smooth](https://github.com/fzyzcjy/flutter_smooth) which does some clever stuff to preempt rendering.
 5. Async
 	* I dunno, never experienced performance issues with async.
 	* There were some bad benchmarks GetX did that compared the performance of Stream, which may have been a source of confusion in the community.
