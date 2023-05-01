@@ -15,7 +15,6 @@ share: true
 
 ## TODO
 
-- Practice pitch
 - Research topics
 	- Unison
 	- Tess Brainfuck stuff
@@ -41,7 +40,8 @@ share: true
 		* Rust is a good example of idealistic programming becoming popular, they built a nice systems language with a good ecosystem and unified build system that also happened to be safe
 * Need marketing strategy if mathematicians will ever actually use it
 	* The bar for tooling in math research is super low so capturing a single area is not hard, but we want to create something DSL-like that can be useful in all areas of math
-	* Need feedback from users here
+	* Need feedback from users here 
+	* proofmarket.org was a market for agda / coq proofs but it was run by a single person and didn't have good UI/UX
 * Propositional equality is very hard
 	* Yes
 
