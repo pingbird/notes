@@ -39,7 +39,7 @@ One thing you'll probably relate to is how most I/O APIs built into programming 
 
 We can compare this to go's less thought out (to put it lightly) filesystem API: https://pkg.go.dev/io/fs@go1.20.3 which has no streaming, has awkward error handling, and treats the quirks of Linux as a first class feature.
 
-Let's say you wanted to do something simple like build an http server from scratch that serves a cute bird picture. This is trivial because of [Stream](https://api.dart.dev/stable/2.19.6/dart-async/Stream-class.html) and the File API:
+Let's say you wanted to do build something simple an http server that serves a cute bird picture, this is trivial because of the [Stream](https://api.dart.dev/stable/2.19.6/dart-async/Stream-class.html) and [File](https://api.dart.dev/stable/2.19.6/dart-io/File-class.html) API:
 
 ```dart
 import 'dart:io';
