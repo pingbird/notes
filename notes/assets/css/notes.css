@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+
+/* Static header */
+
 .md-container,
 .md-main__inner {
     padding-top: 0;
@@ -11,10 +15,26 @@
     top: 0;
 }
 
+/* Dark header */
+
 .md-header {
     background-color: #1d1e27;
 }
 
 .md-header .md-tabs {
     background-color: #1d1e27;
+}
+
+/* Title / Header fonts */
+
+.md-header, .md-sidebar, .md-footer, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Klee One', cursive;
+}
+
+[data-md-color-scheme=slate] {
+    --md-typeset-a-color: #878cfe !important;
+}
+
+[data-md-color-scheme=slate] .md-typeset a {
+    font-weight: bold;
 }
