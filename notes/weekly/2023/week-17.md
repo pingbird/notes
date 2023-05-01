@@ -33,7 +33,7 @@ share: true
 	* Be so cool that investors dump money in it regardless
 	* The Mozilla / non-profit approach (eh)
 	* Cloud solutions (eh)
-	* Consulting gig (eh)
+	* Consulting gigs (eh)
 * Basically implementing unison
 	* We are building off of an existing language not re-inventing a new one from scratch
 	* Iota is more focused on the ergonomics of proofs not general purpose distributed programming
@@ -47,7 +47,7 @@ share: true
 
 ## Market instrument ideas
 
-Lots of existing markets can be very easily formalized into propositions that are compatible with a proof market. Bitcoin mining, for example, can be implemented by creating it's hashing algorithm and bidding on a proof that there exists an input s where hashing s returns something that can mine the block.
+Lots of existing markets can be very easily formalized into propositions that are compatible with a proof market. Bitcoin mining, for example, can be implemented by creating it's hashing algorithm and bidding on a proof that there exists an input `s` where hashing `s` returns something that can mine the block.
 
 Instruments that are essentially proxies to external markets would require a legal framework to ensure transactions are reliably fulfilled, for example with the [RSA Factoring Challenge](https://en.wikipedia.org/wiki/RSA_Factoring_Challenge) we would reach out to companies like RSA Security LLC to have them bid directly on our platform or sign an agreement to award funds.
 
@@ -55,6 +55,6 @@ Bug bounties are an approach that require more work but have higher liquidity an
 
 For example, you could declare propositional data that represents a web browser in an bad state (broken out of sandbox, file accessed, adversary acquired flag, etc.) and make bids on whether there exists an input that can transition the computer with your web browser from a good state into a bad state.
 
-Implementing the semantics of assembly in Agda wouldn't take that much longer as it would in Haskell, OS semantics would be a little harder, but this is a perfectly attainable goal and widely applicable.
+Implementing the semantics of assembly in Agda wouldn't take much more time as it would in Haskell, OS semantics are a little harder, but this is a perfectly attainable goal and widely applicable.
 
 You can use both analytical and traditional tools to make money solving proofs (the ask in bid/ask), just providing the input directly in the above example and running the type checker is a sufficient proof.
