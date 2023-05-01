@@ -13,7 +13,7 @@ Thankfully you can buy a separate set of [translucent ABS keycaps](https://www.k
 
 ## Keycaps
 
-As any perfectly sane person with a lot of time would do, I sanded off the top all the keycaps by hand:
+As any perfectly sane person with a lot of time would do, I sanded off the top all the keycaps by hand (ft. Dash!):
 
 ![[20230421_015107.jpg]]
 
