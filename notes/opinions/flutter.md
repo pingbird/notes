@@ -66,7 +66,7 @@ The expressiveness of `File('birb.jpg').openRead().pipe(client.response);` is wh
 4. Closing the socket also closes the file
 5. Slow clients won't cause the file chunks to be buffered in memory more than necessary, when the socket's send buffer is full it pauses the pipe's [StreamSubscription](https://api.dart.dev/stable/2.19.6/dart-async/StreamSubscription-class.html), which causes openRead to stop reading new chunks
 
-The last one is particularly difficult to do in other languages because it requires a state machine that the producer has to react to, a really common thing that gets overlooked. It is also very common to see Stream implementations (e.g. node.js) that are multi-subscription, which have severe problems like new listeners not getting old values and memory leaks from dangling IO callbacks.
+The last one is particularly difficult to do in other languages because it requires a state machine that the producer reacts to, a really common thing that gets overlooked. It is also very common to see Stream implementations (e.g. node.js) that are multi-subscription, which have severe problems like new listeners not getting old values and memory leaks from dangling IO callbacks.
 
 ## Package Ecosystem
 
@@ -87,9 +87,9 @@ Lots of people complain about the lack of consensus on state management patterns
 
 Just pick an architecture you are productive with and roll with it. My advice is to avoid packages that are just global variables (like GetX and get_it) and choose something that makes your code reliable and easy to test (like riverpod, bloc, provider, mobx).
 
-Personally I use Riverpod for DI, a custom [improved version of hooks](https://gist.github.com/PixelToast/8ea4495637a366f340a3eca8bf528388), and rxdart. Built-in Futures and Streams are an underrated tool for state management, particularly when it comes to error handling.
+Personally I use Riverpod for dependency injection, a custom [improved version of hooks](https://gist.github.com/PixelToast/8ea4495637a366f340a3eca8bf528388), and [rxdart](https://pub.dev/packages/rxdart). Built-in Futures and Streams are an underrated tool for state management, particularly when it comes to error handling.
 
-FutureBuilder and StreamBuilder are admittedly super verbose and can't read values synchronously from an rxdart ValueStream, if you are looking for a drop-in replacement try my [async_builder](https://pub.dev/packages/async_builder) package.
+[FutureBuilder](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html) and [StreamBuilder](https://api.flutter.dev/flutter/widgets/StreamBuilder-class.html) are super verbose and can't read values synchronously from a [ValueStream](https://pub.dev/documentation/rxdart/latest/rx/ValueStream-class.html), if you are looking for a drop-in replacement try my [async_builder](https://pub.dev/packages/async_builder) package.
 
 I dislike redux style state management (actions / reducers on immutable data) it tends to be much too verbose because of Dart being strongly object oriented, using it over plain services with methods feels like a downgrade.
 
