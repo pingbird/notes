@@ -17,6 +17,8 @@ The framework code is extremely high quality, the team consistently holds themse
 
 These positives come with some obvious drawbacks though, new features take forever to land and bugs are often left open for months due to the team having so much on their plate.
 
+Small disclaimer: I have been on the Flutter team since 2020 and moderate r/FlutterDev, I am not employed by Google but they did send me a plushie of the Flutter mascot that I really love c:
+
 ## Rendering
 
 Because rendering in browsers is done by an black-box web engine, CSS *has* to be bloated, otherwise lots of things would simply be impossible to build. What Flutter did to solve this problem was move rendering to userspace. The API is designed so well that you can change any aspect of rendering (other than compositing) from plain Dart.
@@ -39,7 +41,7 @@ One thing you'll probably relate to is how most I/O APIs built into programming 
 
 We can compare this to go's less thought out (to put it lightly) filesystem API: https://pkg.go.dev/io/fs@go1.20.3 which has no streaming, has awkward error handling, and treats the quirks of Linux as a first class feature.
 
-Let's say you wanted to do build something simple an http server that serves a cute bird picture, this is trivial because of the [Stream](https://api.dart.dev/stable/2.19.6/dart-async/Stream-class.html) and [File](https://api.dart.dev/stable/2.19.6/dart-io/File-class.html) API:
+Let's say you wanted to do build something simple like an http server that serves a cute bird picture, this is trivial because of the [Stream](https://api.dart.dev/stable/2.19.6/dart-async/Stream-class.html) and [File](https://api.dart.dev/stable/2.19.6/dart-io/File-class.html) API:
 
 ```dart
 import 'dart:io';
