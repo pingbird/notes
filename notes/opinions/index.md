@@ -3,4 +3,4 @@ share: true
 title: "Opinions"
 ---
 
-Disregard everything in this section.
+(disregard everything in this section)
