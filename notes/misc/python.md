@@ -1,8 +1,7 @@
 ---
 share: true
+title: "Python"
 ---
-
-# Python
 
 Comments start with `#`
 
