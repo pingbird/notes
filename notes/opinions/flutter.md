@@ -131,7 +131,7 @@ Performance is a complicated topic, there are many small things that need to be 
 
 ## Flutter Web
 
-Flutter web kinda sucks in a lot of aspects, it feels like you are using an emulator, the performance is often poor, it takes a long time to load, accessibility is nonexistent, SEO, no inspect element.
+Flutter web kinda sucks in a lot of aspects, it feels like you are using an emulator, the performance is often poor, it takes a long time to load, accessibility is limited, nonexistent SEO, no inspect element.
 
 The reasons it sucks is not because Flutter did a bad job but because the web is generally hostile to new frameworks. To run code on the web you are forced to use either JavaScript, which is slow and has inconvenient semantics, or WASM, which is slightly faster but has limited interop. 
 

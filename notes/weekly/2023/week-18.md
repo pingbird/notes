@@ -6,11 +6,13 @@ share: true
 
 ## Done
 
-* 
+- Got ghcjs working
 
 ## TODO
 
 - Practice pitch
+* Learn Haskell
+* Iota JS backend
 
 ## Iota Strategy
 
@@ -35,3 +37,7 @@ share: true
 2. Create basic rendering library in agda
 3. Create vscode plugin that uses iota runtime to evaluate rendering library
 4. Use it to implement some fancy grammars
+
+## JS backend 
+
+Figure out how to seamlessly link type checked code with agda parser
