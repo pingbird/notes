@@ -268,7 +268,6 @@ lend2 amount balance = if amount < reserve * 0.5
 ```haskell
 a $ b c = a (b c)
 a . b = \x a b x
-
 ```
 
 ## Evaluation
@@ -278,3 +277,4 @@ a . b = \x a b x
 -- this is useful to eliminate function frames (thunks) from growing in recursive folds
 seq :: a -> t -> t
 ```
+
