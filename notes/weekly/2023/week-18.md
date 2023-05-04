@@ -53,12 +53,33 @@ Call chain:
    Type checks the main file and returns the type checking scope monad
 4. **Interaction.Imports.parseSource**
    Parses a source file and returns the concrete module
-5. **Interaction.Imports.typeCheckMain**
+5. **Interaction.Imports.parseFileFromString**
+   Parses a string 
+6. 
+7. **Interaction.Imports.typeCheckMain**
    Takes concrete module and does type checking, adding the resulting interface to the scope monad
-6. **Interaction.Imports.getInterface**
+7. **Interaction.Imports.getInterface**
    Gets the TypeChecking.Monad.Base.Interface (cached)
-7. **Interaction.Imports.createInterface**
-8. **Syntax.Translation.ConcreteToAbstract.concreteToAbstract_**
+8. **Interaction.Imports.createInterface**
+9. **Syntax.Translation.ConcreteToAbstract.concreteToAbstract_**
    Actually transforms the top-level concrete module to abstract (TopLevelInfo)
-9. **Interaction.Imports.buildInterface**
+10. **Interaction.Imports.buildInterface**
     Builds the Interface of a type checked module 
+
+TODO:
+
+1. ~~Parse into concrete~~
+	1. ~~Figure out context / monad stuff~~
+	2. ~~Mock IO? Even concreteToAbstract is impure, I don't think it actually does any IO though...~~
+2. Figure out why ghcjs no work
+3. Try wasm backend instead
+4. No hope
+5. Give up and use Idris?
+6. One more try...
+7. Hasdfhlsdfhj HOLY SHIT it works
+
+```
+nix --extra-experimental-features "nix-command flakes" build .#all_9_6
+
+/home/ping/dev/ghc-wasm-meta/result/bin/cabal build --write-ghc-environment-files=always --with-compiler=/home/ping/dev/ghc-wasm-meta/result/bin/wasm32-wasi-ghc --constraint='zlib +bundled-c-zlib'
+```
