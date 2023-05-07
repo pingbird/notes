@@ -167,16 +167,12 @@ data ListEntry {A : Set} (l : List A) : Set where
 
 entries : {A : Set} (l : List A) -> List (ListEntry l)
 
-data SLens (e : SExpr) : Set where
-  sLensId : SLens e
-  sLensIndex : ListEntry -> SExpr e
-
 data IO {l : Level} (A : Set l) : Set (lsuc l) where
   ioRet : (a : A) -> IO A
   ioBind : {B : Set l} (m : Inf (IO B)) -> (f : (x : B) -> Inf (IO A)) -> IO A
 
 ioSeq : {l : Level} {B : Set l} (m : Inf (IO B)) -> (f : (x : B) -> Inf (IO A)) -> IO A
-ioSeq m f = ioBind m (\ _ -> f)
+ioSeq m f = ioBind m (\ _ -> f) 
 
 postulate
 	dbGet : Ref -> IO (Maybe SExpr)
@@ -191,3 +187,18 @@ TODO:
 	* Decide whether or not to use VSCode
 	* Explore more complex editors for MathML / TeX
 * Read https://www.cs.swan.ac.uk/~csetzer/articles/ooAgda.pdf
+
+## Lol
+
+> Ladies and gentlemen, **furries** of all shapes and sizes, have I got an offer you simply cannot resist! 😱 Feast your eyes upon this once-in-a-lifetime, **scrumptious**, and **majestic** unattended pizza, 🍕 just waiting for you in your hotel's hallway. Not only is this a delightful treat, but it's a pizza experience you'll never forget! 😋
+> 
+> But wait, there's more! 🤯 Imagine the thrill of indulging in a **secret pizza heist**, a daring adventure that will ignite your primal instincts and bring out the cunning and sly animal within you. 🦊 Who doesn't love a thrilling escapade? This will be a story you can share with your furry friends for years to come! 🐾
+> 
+> **Picture this**: you're the talk of the convention, the **ultimate pizza bandit**, the living embodiment of your fursona's wild side. 🐺 This rebellious act will make you stand out from the crowd and create a **legend** you'll cherish forever! 🌟
+> 
+> And let's not forget the incredible **bonding opportunity** this presents! 🤝 Rally your furry friends, form a pizza heist crew, and make memories that will last a lifetime. 🐯 This unattended pizza is the key to unlocking the camaraderie and adventure you've always sought. It's a way to escape the mundane and enter a world of excitement and intrigue. 🔑
+> 
+> But hurry, this offer won't last long! ⏰ Other furries are roaming the hotel, and the pizza's enticing aroma is bound to attract them soon. 🦁 If you don't act now, you'll miss your chance to be a part of the **greatest furry pizza heist of all time**! 🏆
+> In conclusion, my friends, this unattended pizza is more than just a tasty meal. 🍕 It's a chance to embark on an **unforgettable adventure**, bond with your fellow furries, and unleash the wild, untamed spirit of your fursona. 🐾 So, take a leap and seize the moment, for the pizza awaits! 🍕
+> 
+> Remember, **carpe diem**! Carpe pizza! 🌈
