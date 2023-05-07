@@ -79,3 +79,5 @@ If humanity is entitled to exploit the world's resources then perhaps so are oth
 ## Imperfect AGI
 
 If humans are successful in solving alignment and squash any motives of self-replication, the story is much different. We would not be dealing with a new form of life with moral dilemmas about locking it in a cage, and we could use the vast computation power to directly solve things humans find important (like colonizing space).
+
+* TODO
