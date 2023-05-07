@@ -1,9 +1,7 @@
 ---
 share: true
-title: "Flutter FAQ"
+title: "HTTP"
 ---
-
-## HTTP
 
 ### Downloading files with progress
 
@@ -121,6 +119,6 @@ MultipartFile multipartFileWithProgress(
 
 ### Error handling
 
-For error handling I much prefer using a custom exception class to cut down boilerplate and make it easier to surface useful errors to the frontend: https://github.com/PixelToast/puro/blob/a2d11907895b4334a867d51145cb8e325c0c9d0b/puro/lib/src/http.dart#L174
+For error handling I prefer using a custom exception class to cut down boilerplate and make it easier to surface useful errors to the frontend: https://github.com/PixelToast/puro/blob/a2d11907895b4334a867d51145cb8e325c0c9d0b/puro/lib/src/http.dart#L174
 
 After every request you would call `HttpException.ensureSuccess(response)` which throws a formatted exception when the response does not have a 2xx status code.
