@@ -3,7 +3,7 @@ share: true
 title: "HTTP"
 ---
 
-### Downloading files with progress
+## Downloading files with progress
 
 The best way to download a file is to use [File.openWrite](https://api.dart.dev/stable/3.0.0/dart-io/File/openWrite.html) and a streamed request. This allows the file to be read in chunks instead of all at once, saving you from dangrous out of memory errors:
 
@@ -45,7 +45,7 @@ void main() async {
 }
 ```
 
-### Uploading files with progress
+## Uploading files with progress
 
 Uploading is a similar story, we use [File.openRead](https://api.dart.dev/stable/3.0.0/dart-io/File/openRead.html) to read the file and a [StreamedRequest](https://pub.dev/documentation/http/latest/http/StreamedRequest-class.html) to pipe it to the server in chunks:
 
@@ -93,7 +93,7 @@ void main() async {
 }
 ```
 
-### Multipart request progress
+## Multipart request progress
 
 Again same as before, we can use openRead and map to count the bytes:
 
@@ -117,7 +117,7 @@ MultipartFile multipartFileWithProgress(
 }
 ```
 
-### Error handling
+## Error handling
 
 For error handling I prefer using a custom exception class to cut down boilerplate and make it easier to surface useful errors to the frontend: https://github.com/PixelToast/puro/blob/a2d11907895b4334a867d51145cb8e325c0c9d0b/puro/lib/src/http.dart#L174
 
