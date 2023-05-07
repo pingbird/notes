@@ -9,7 +9,7 @@ theme:
     custom_dir: overrides
     font:
         text: Ubuntu
-        code: Space Mono
+        code: Roboto Mono
     language: en
 
     palette:
