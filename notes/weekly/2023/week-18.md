@@ -9,13 +9,7 @@ share: true
 - Got ghcjs working (or not, i hit a bug)
 - Wrote HTTP section in Flutter FAQ
 - Iota API / IO monad draft
-- 
-
-## TODO
-
-- Practice pitch
 * Learn Haskell
-* Iota JS backend
 
 ## Iota Strategy
 
@@ -57,8 +51,7 @@ Call chain:
 4. **Interaction.Imports.parseSource**
    Parses a source file and returns the concrete module
 5. **Interaction.Imports.parseFileFromString**
-   Parses a string 
-6. 
+   Parses a string
 7. **Interaction.Imports.typeCheckMain**
    Takes concrete module and does type checking, adding the resulting interface to the scope monad
 7. **Interaction.Imports.getInterface**
@@ -174,10 +167,14 @@ data IO {l : Level} (A : Set l) : Set (lsuc l) where
 ioSeq : {l : Level} {B : Set l} (m : Inf (IO B)) -> (f : (x : B) -> Inf (IO A)) -> IO A
 ioSeq m f = ioBind m (\ _ -> f) 
 
+record NormalizeResult : 
+
 postulate
-	dbGet : Ref -> IO (Maybe SExpr)
-	dbPut : SExpr -> IO Ref
-	compileModule : SExpr -> IO Either Ref Ref
+  dbGet : Ref -> IO (Maybe SExpr)
+  dbPut : SExpr -> IO Ref
+  compileModule : SExpr -> IO Either Ref Ref
+  normalize : Ref -> IO Ref Ref
+	
 ```
 
 TODO:
@@ -186,7 +183,9 @@ TODO:
 	* Try out some VSCode extensions
 	* Decide whether or not to use VSCode
 	* Explore more complex editors for MathML / TeX
+	* https://cortexjs.io/mathlive/demo/
 * Read https://www.cs.swan.ac.uk/~csetzer/articles/ooAgda.pdf
+* Focus effort
 
 ## Lol
 
@@ -202,3 +201,19 @@ TODO:
 > In conclusion, my friends, this unattended pizza is more than just a tasty meal. 🍕 It's a chance to embark on an **unforgettable adventure**, bond with your fellow furries, and unleash the wild, untamed spirit of your fursona. 🐾 So, take a leap and seize the moment, for the pizza awaits! 🍕
 > 
 > Remember, **carpe diem**! Carpe pizza! 🌈
+
+## Bird / Birdie Feedback
+
+* Trouble imagining what it does / looks like
+	* Demo will make this easier
+* Why not emacs?
+	* HTML is better than GTK
+	* VSCode is the most popular IDE and has a big extension ecosystem
+	* We would like to support the web regardless and uising a web-based editor leads to less fragmentation
+* How to prevent laundering
+	* An example of laundering would be bidding on large prime factors, only the parties who know the original primes would be able to sell
+	* We can pretty easily detect this kind of traffic and classify proofs that are impossible without prior knowledge
+	* Securitizing proofs will likely make us subject to FINRA regulations which have programs in place for KYC / AML, it would be no different from the reporting that Robinhood does
+* How to prevent inside trading
+* Investors not interested in AGI
+* Use prediction as a mechanism to validate postulates
