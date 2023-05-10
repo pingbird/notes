@@ -12,7 +12,8 @@ share: true
 
 - Practice pitch
 - Add Doc/IO monad to core
-- 
+- Web editor
+- Permissions
 
 ## Storage
 
