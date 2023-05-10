@@ -17,7 +17,7 @@ As any perfectly sane person with a lot of time would do, I sanded off the top a
 
 ![[20230421_015107.jpg]]
 
-![type:video](20230416_151953_3.mp4)
+![type:video](https://i.tst.sh/TIFoE.mp4)
 
 It looks soooooooooooooooooooooooooooooo pretty.
 
@@ -25,7 +25,7 @@ It looks soooooooooooooooooooooooooooooo pretty.
 
 Another cool thing I did with the keyboard is implement the [agda emacs input mode](https://agda.readthedocs.io/en/latest/tools/emacs-mode.html) on the hardware itself, no pynput or AHK involved. This is extremely useful for writing proofs outside of emacs or an editor with TeX.
 
-![type:video](20230421_025001.mp4)
+![type:video](https://i.tst.sh/R7bcb.mp4)
 
 It has some cool features which are not possible with built-in composition:
 
