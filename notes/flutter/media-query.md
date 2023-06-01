@@ -11,7 +11,7 @@ This applies to not just MediaQuery but also the popular `sizer`, `responsive_si
 
 ## Fractional Sizing
 
-You might find this surprising but fractional sizing is generally bad design, it is much better to use the powerful [built-in layout widgets](https://docs.flutter.dev/ui/widgets/layout) and breakpoints to achieve a desired layout.
+This might be surprising but fractional sizing is bad practice, it is much better to use the powerful [built-in layout widgets](https://docs.flutter.dev/ui/widgets/layout) and breakpoints to achieve a desired layout.
 
 Here's what a typical use of MediaQuery looks like:
 
@@ -30,7 +30,7 @@ SizedBox(
 
 This is not something you want in practice, responsiveness is all about how your layouts adapt to the strengths and weaknesses of the device, simply scaling the same layout up and down does not create a good experience.
 
-To illustrate this, I've created a news app about my favorite bird that properly utilizes built-in layout widgets:
+To illustrate this, I've created a news app that uses built-in layout widgets to properly adapt to different screen sizes:
 
 ![](https://i.tst.sh/1685589984433963.png)
 
@@ -54,23 +54,27 @@ If we take the lazy approach instead and use a package like `sizer` to scale the
 
 Everything now has the same relative size but is way too big on the tablet, the app bar, text, and buttons take up twice as much space as they would in a native application. The difference in aspect ratio also means less content is visible on the tablet than the phone, yuck!
 
-### "Our design used fractional sizes and I need it to be pixel-perfect"
+### "I need MediaQuery to prevent overflows"
 
-This excuse is often given when you were handed a design and told to implement it exactly as shown, this unfortunately a very common situation that I sympathize with. Perhaps this article can persuade you (or your teammates) to break out of the mindset of everything having to be pixel-perfect.
 
-Building apps is always going to be an iterative process, both the wireframes and code are going to evolve over time as you get feedback or develop new features. Suggesting (and implementing) changes to a design is important part of that process, it might just require more effective communication.
 
-The finished product is always going to look slightly different from what was envisioned, it's up to you (the app developer) to make those slight differences lead to a better user experience.
-
-### "Wouldn't text be too small on bigger displays?"
+### "Wouldn't text look too small on large screens?"
 
 Not at all. Widgets might consume a smaller fraction of the space but bigger displays also consume more of the user's field of view.
 
-Text sizing is the most common thing I see initial app designs get wrong, it's difficult to know what feels good until you've played with it on a physical device and switched to and from other apps. Generally you should refer to the material guidelines described in [TextTheme](https://api.flutter.dev/flutter/material/TextTheme-class.html) which puts body text at 14px:
+Text sizing is the most common thing app wireframes get wrong, it's difficult to know what feels good until you've played with it on a physical device. Generally you should refer to the material guidelines described in [TextTheme](https://api.flutter.dev/flutter/material/TextTheme-class.html) which puts body text at 14px:
 
 ![](https://i.tst.sh/1685597520289625.png)
 
 If you still aren't convinced, compare these text sizes to a Google search:
 
 ![](https://i.tst.sh/1685600070803315.png)
-Google doesn't seem to think 14px fonts are too small, and neither should you. Consistency with other apps leads to a better user experience and users can configure text sizes in system settings if they prefer it to be bigger or smaller.
+Google doesn't seem to think 14px fonts are too small on desktops or tablets, and neither should you. Consistency with other apps leads to a better user experience and users can configure text sizes in system settings if they prefer it bigger or smaller.
+
+### "Our design used fractional sizes and I need it to be pixel-perfect"
+
+This excuse is often given when you were handed a design and told to implement it exactly as shown, a common situation that I can sympathize with. Perhaps this article will persuade you (or your teammates) to break out of the mindset of everything having to be pixel-perfect.
+
+Building apps is always an iterative process, both the wireframes and code are going to evolve over time as you get feedback or develop new features. Suggesting (and implementing) changes to a design is important part of that process, it might just require more effective communication.
+
+The finished product is always going to look slightly different from what was envisioned, it's up to you (the app developer) to make those slight differences lead to a better user experience.
