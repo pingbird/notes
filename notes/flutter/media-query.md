@@ -43,7 +43,7 @@ If we take the lazy approach instead and use a package like `sizer` to scale the
 
 Everything now has the same relative size but is way too big on the tablet, the app bar, text, and buttons take up twice as much space as they would in a native application. The difference in aspect ratio also means less content is visible on the tablet than the phone, yuck!
 
-### "I need MediaQuery to prevent overflows"
+## "I need MediaQuery to prevent overflows"
 
 Here is a typical use of MediaQuery, this gives us a button that takes up 80% of the screen with a 8:1 aspect ratio:
 
