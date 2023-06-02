@@ -5,26 +5,15 @@ title: MediaQuery
 
 One of the most common questions asked by beginners in Flutter help channels is "How do I make my widget responsive?" or "How do I make my UI look the same on all devices?" and the most common answer is to use MediaQuery or a similar package that sizes widgets based on a fraction of the screen size.
 
-In this article we will break down common misconceptions that led to MediaQuery unfortunaztely becoming so common and why fractional sizing is bad practice in geneal.
+In this article we will break down common misconceptions that led to MediaQuery unfortunaztely becoming so common and why fractional sizing is bad practice in general.
 
 This applies to not just MediaQuery but also the popular `sizer`, `responsive_sizer`, and `flutter_screenutil` packages, which change the size of widgets proportional to the size of the screen.
 
 ## Fractional Sizing
 
-This might be surprising but fractional sizing is bad practice, it is much better to use the powerful [built-in layout widgets](https://docs.flutter.dev/ui/widgets/layout) and breakpoints to achieve a desired layout.
+Fractional sizing is indeed bad practice, it is almost always better to use the powerful [built-in layout widgets](https://docs.flutter.dev/ui/widgets/layout) and breakpoints to achieve a desired layout.
 
-Here's what a typical use of MediaQuery looks like:
-
-```dart
-SizedBox(
-  width: MediaQuery.of(context).size.width * 0.4,
-  height: MediaQuery.of(context).size.width * 0.1,
-  child: ElevatedButton(
-    onPressed: () {},
-    child: const Text('Do a Thing'),
-  ),
-),
-```
+Here are the four most common excuses I see for using fractional sizing:
 
 ### "I want my app to look the same regardless of the size of device"
 
@@ -34,19 +23,19 @@ To illustrate this, I've created a news app that uses built-in layout widgets to
 
 ![](https://i.tst.sh/1685589984433963.png)
 
-This is a scale model of a phone and tablet, we can see that text and padding is pretty much the same between the two and the layout adapts well to the extra space. This works as intended without any special tweaks, Flutter (just like native apps) use a pixel scaling factor set by the device manufacture which ensures text and other UI elements are a similar *physical* size regardless of platform.
+This is a scale model of a phone and tablet, we can see that text and padding is pretty much the same between the two. This works as intended without any special tweaks, Flutter (just like native apps) use a pixel scaling factor set by the device manufacture which ensures text and other UI elements are a similar *physical* size regardless of platform.
 
-Our Amazing Pigeons app adapts to different screen dimensions in a few different ways here:
+Our Amazing Pigeons app adapts to different viewport dimensions in a few different ways here:
 
 1. Padding is automatically applied to the AppBar to keep the status bar and notch out of the way.
 2. The welcome text uses a combination of SizedBox, Row, and Expanded to let the text wrap on small displays but not look too wide on bigger ones.
 3. The Wrap widget is used to distribute tag chips according to how much space is available.
-4. The carousel uses an AspectRatio to prevent the images from being smushed on big or small screens.
+4. The carousel uses an AspectRatio to prevent images from being smushed on big or small screens.
 5. The carousel tiles use a Stack to overlay text while still allowing it to wrap, supplying the left/right parameters to Positioned ensures the text has the right constraints.
 6. Just like the welcome text, the "Join the Flock" button and its accompanying text field are wrapped in a SizedBox and Center to ensure it isn't too wide.
 7. Everything is wrapped in a ListView so we can add more content vertically without overflowing.
 
-Understanding Flutter's layout protocl and getting in the habit of applying these techniques is well worth it, most of the time you don't need to think about overflows or screen sizes, just let the framework do its thing.
+Understanding Flutter's layout protocol and getting in the habit of applying these techniques is worth it, most of the time you don't need to think about overflows or screen sizes, just let the framework do its thing.
 
 If we take the lazy approach instead and use a package like `sizer` to scale the whole app, it looks like this:
 
@@ -56,17 +45,64 @@ Everything now has the same relative size but is way too big on the tablet, the 
 
 ### "I need MediaQuery to prevent overflows"
 
+Here is a typical use of MediaQuery, this gives us a button that takes up 80% of the screen with a 8:1 aspect ratio:
 
+```dart
+SizedBox(
+  width: MediaQuery.of(context).size.width * 0.8,
+  height: MediaQuery.of(context).size.width * 0.1,
+  child: ElevatedButton(
+    onPressed: () {},
+    child: const Text('Do a Thing'),
+  ),
+),
+```
+
+Most devices are 400 logical pixels wide, so we can roughly translate 80%x10% to 350x45:
+
+```dart
+SizedBox(
+  width: 350,
+  height: 40,
+  child: ElevatedButton(
+    onPressed: () {},
+    child: const Text('Do a Thing'),
+  ),
+),
+```
+
+Now that it has a static size you might see an overflow error on small devices:
+
+![](https://i.tst.sh/1685660953045453.png)
+
+The common misconception here is that the button is trying to be too wide and needs to size itself smaller, but that isn't true, the real problem is that the button was not constrained by its parent.
+
+In this case, the error is actually being generated by a parent `Row` that was used to center the button, and the solution is very simple, just wrap the row's immediate child in a `Flexible`:
+
+```dart
+Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    Flexible(child: SizedBox(
+      width: 350,
+      height: 40,
+      child: ...
+    )),
+  ],
+)
+```
+
+What `Flexible` does is tell the `Row` to give the child a `maxWidth` constraint, children are forced to follow the constraints given by their parent so there is no overflow error! The width parameter essentially being ignored when there isn't enough space is well-defined behavior, you can read more about it in my [Introduction to Layout](https://boxy.wiki/primer/introduction-to-layout/).
 
 ### "Wouldn't text look too small on large screens?"
 
 Not at all. Widgets might consume a smaller fraction of the space but bigger displays also consume more of the user's field of view.
 
-Text sizing is the most common thing app wireframes get wrong, it's difficult to know what feels good until you've played with it on a physical device. Generally you should refer to the material guidelines described in [TextTheme](https://api.flutter.dev/flutter/material/TextTheme-class.html) which puts body text at 14px:
+Text sizing is the most common thing app wireframes get wrong, it's difficult to know what feels right until you've played with it on a physical device. Generally you should refer to the material guidelines described in [TextTheme](https://api.flutter.dev/flutter/material/TextTheme-class.html) which puts body text at 14px:
 
 ![](https://i.tst.sh/1685597520289625.png)
 
-If you still aren't convinced, compare these text sizes to a Google search:
+If you still aren't convinced, let's look at a simple Google search on these two devices:
 
 ![](https://i.tst.sh/1685600070803315.png)
 Google doesn't seem to think 14px fonts are too small on desktops or tablets, and neither should you. Consistency with other apps leads to a better user experience and users can configure text sizes in system settings if they prefer it bigger or smaller.
@@ -78,3 +114,8 @@ This excuse is often given when you were handed a design and told to implement i
 Building apps is always an iterative process, both the wireframes and code are going to evolve over time as you get feedback or develop new features. Suggesting (and implementing) changes to a design is important part of that process, it might just require more effective communication.
 
 The finished product is always going to look slightly different from what was envisioned, it's up to you (the app developer) to make those slight differences lead to a better user experience.
+
+## Additional Q&A
+
+* What were these device screenshots made with?
+	* I used the `device_frame` package to emulate the MediaQuery (including accurate viewport sizes) of common devices, they were scaled according to their precise physical dimensions, and the `screenshot` package was used to actually capture and save the pngs.
