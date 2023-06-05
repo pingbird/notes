@@ -8,6 +8,8 @@ share: true
 
 * Got typeCheckString working
 * Finished Flutter MediaQuery doc
+* Started working on Flutter layout doc
+* Got import overrides to work
 
 ## TODO
 
@@ -32,4 +34,3 @@ share: true
 ## Iota
 
 * Stop trying to preprocess CST and just use DI to replace import mechanism
-* !!!!
