@@ -13,7 +13,7 @@ This applies to not just MediaQuery but also the popular `sizer`, `responsive_si
 
 Fractional sizing is indeed bad practice, it is almost always better to use the powerful [built-in layout widgets](https://docs.flutter.dev/ui/widgets/layout) and breakpoints to achieve a desired layout.
 
-It's not obvious why simple layout widgets and static sizes are better until you look at real examples.
+In the following section I clear up some misconceptions, provide alternatives to fractional sizing, and show what it looks like on a phone and tablet.
 
 ## Make your app look the same on all devices
 
