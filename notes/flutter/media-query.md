@@ -7,23 +7,19 @@ One of the most common questions asked by beginners in Flutter help channels is 
 
 In this article we will break down common misconceptions that led to MediaQuery, unfortunately, becoming so common, and why fractional sizing is bad practice in general.
 
+In my 6 years of developing Flutter apps professionally I have never seen a good reason to use something like `MediaQuery.of(context).size.width * 0.6` to size a widget. In fact, it directly hurts accessibility and causes more layout problems than it solves. It is always better to use the powerful [built-in layout widgets](https://docs.flutter.dev/ui/widgets/layout) and breakpoints to achieve a desired layout.
+
 This applies to not just MediaQuery but also the popular `sizer`, `responsive_sizer`, and `flutter_screenutil` packages, which change the size of widgets proportional to the size of the screen.
-
-## Fractional Sizing
-
-Fractional sizing is indeed bad practice, it is almost always better to use the powerful [built-in layout widgets](https://docs.flutter.dev/ui/widgets/layout) and breakpoints to achieve a desired layout.
-
-In the following section I clear up some misconceptions, provide alternatives to fractional sizing, and show what it looks like on a phone and tablet.
 
 ## Make your app look the same on all devices
 
 Making your app look the same on every device is not actually desirable in practice. Responsiveness is all about how your layouts adapt to the strengths and weaknesses of the device, simply scaling the same layout up and down does not create a good experience.
 
-To illustrate why, I've created a news app. If we take the lazy approach and use a package like `sizer` to scale the whole app, it looks like this:
+I've created a news app to illustrate why. If we take the lazy approach and use a package like `sizer` to scale the whole app, it looks like this:
 
 ![](https://i.tst.sh/1685590653573075.png)
 
-Everything now has the same relative size but is way too big on the tablet, the app bar, text, and buttons take up twice as much space as they would in a native application. The difference in aspect ratio also means less content is visible on the tablet than the phone, yuck!
+Everything now has the same relative size but is waaay too big on the tablet, the app bar, text, and buttons take up twice as much space as they would in a native application. The difference in aspect ratio also means less content is visible on the tablet than the phone, yuck!
 
 If we remove fractional sizing and use built-in layout widgets instead, we get something much more accessible:
 
