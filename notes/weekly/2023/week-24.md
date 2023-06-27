@@ -11,12 +11,23 @@ share: true
 * Fixed bugs with ancient Flutter versions in Puro
 * Fixed "Flutter SDK is not available" bug in Puro
 * Released Puro 1.3.1
+* Experimented with double casts, it doesn't work :(
+* Got DepEqOp / DecEqOp working :)
+* Got basic map data structure working
+* Implemented nat equality
 
 ## TODO
 
-- Translate abstract tree to Agda (remove Range on TopLevelModuleName?)
-- JS interpreter?
-- Figure out plan for basic editor
+* UI
+	* Document format specification
+	* Custom code blocks?
+* Optimization
+	* WASM builder
+* Reflection
+	* Agda AST
+* ~~Fix thing with fixities not working for imported operators?~~
+	* They're applied to the original symbol
+* Get development environment working on laptop
 
 ## Iota
 
@@ -38,8 +49,9 @@ Holy #\*@& web development is horrible
 
 * Use AI to generate thumbnails for documents?
 * Delta shell for editing documents?
+* Probably going with ToastUI
 
-### Bijection
+## Bijection
 
 ```
 0            | []
