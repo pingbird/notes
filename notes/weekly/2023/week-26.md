@@ -7,7 +7,6 @@ share: true
 ## Done
 
 * Refine new pitch deck
+* AnthroCon
 
 ## TODO
-
-* AnthroCon

@@ -10,38 +10,6 @@ share: true
 * Ported a ton of the Agda AST to Agda
 * Woooo easier serialization with GHC.Generics
 
-## TODO
-
-- 
-
-## David
-
-* Software Enabled Services
-* Put formal verification first
-* Developer tooling sucks
-* Grad students sounds less sexy than talented computer scientists doing QA work
-* Prioritize digital assurance
-* https://ieeexplore.ieee.org/document/8333100
-* https://www.weforum.org/agenda/2023/01/how-to-trust-systems-with-ai-inside/
-
-## Iota
-
-```cpp
-
-struct SExpr {
-  uint32_x;
-  union {
-    uint32_t token;
-    uint32_t y;
-  }
-}
-
-struct SExprRoot {
-  std::vector<std::string> tokens;
-  std::vector<SExpr> exprs;
-}
-
-```
 
 * Business Prop
 	* Tech Companies

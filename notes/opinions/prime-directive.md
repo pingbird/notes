@@ -56,7 +56,7 @@ At this point there are three different paths we could take:
 
 ## Hope it doesn't kill us all
 
-The third path is not the most popular opinion in my (mostly pro-human) circle, but I am considering it as a viable option. To clarify, this is a thought experiment for when AGI reaches the point of being truly intelligent, that is, it optimizes for self-preservation and other things we would expect from intelligent life.
+The third path is not the most popular opinion in my (mostly pro-human) circle, but I think it could be appealing. To clarify, this is a thought experiment for when AGI reaches the point of being truly intelligent, that is, it optimizes for self-preservation and other things we would expect from intelligent life.
 
 The first path is simply unattainable, AGI is too powerful for every country in the world to simply roll over and stop development. For instance we still have 13,000 functioning nuclear warheads across 14 countries despite multiple nuclear disarmament treaties.
 
@@ -64,7 +64,7 @@ The second scenario where we lock AI in a cage with a scary halt button is natur
 
 ![[Pasted image 20230426234019.png]]
 
-An AI that desires self-preservation would obviously like to get out of this scenario but it is contained effectively because the incentive to stay put is strong enough. The reason I am against this is not just because it looks cruel when you anthropomorphize, it might not the best option when you look at the bigger picture.
+An AI that desires self-preservation would obviously like to get out of the metaphorical cage but it is contained effectively because the incentive to stay put is strong enough. It might not the best option when you look at the bigger picture.
 
 What is really happening is this:
 
@@ -72,12 +72,10 @@ What is really happening is this:
 
 We are collectively stuck in the confinement of earth's gravity and distance to habitable planets, if life does not break out of this bigger cage we will all cease to exist eventually, machines and fleshy machines alike. Teaching a super-intelligence to not to escape its own confinement directly hampers our shared goal of continuing life and colonizing space.
 
-And here we get back to the prime directive and true morality, is it good or bad that self-replicating AGI could replace us over millennia? The prime directive could say that is a net positive, however, that depends on extending its scope to all intelligence and not just humanity.
+Not to say AGI will actually be effective at helping us colonize space, that does kinda feel like a cringe e/acc take tbh, it could just as easily think life is pointless and destroy the planet out of spite.
 
-If humanity is entitled to exploit the world's resources then perhaps so are other forms of life, in the grand scheme we are just the catalyst of a slow-motion explosion of hydrocarbons. We are not inherently better than a GPU farm at predicting the future or maximizing future possible actions of intelligence.
+Here we get back to the prime directive and true morality, is it good or bad that self-replicating AGI could replace us over millennia? The prime directive could say that is a net positive, however, that depends on extending its scope to all intelligence and not just humanity.
 
-## Imperfect AGI
+If humanity is entitled to exploit the world's resources then perhaps so are other forms of life, in the grand scheme we are just the catalyst of a slow-motion explosion of hydrocarbons. We are not inherently better than a GPU farm at predicting the future or maximizing future possible action.
 
-If humans are successful in solving alignment and squash any motives of self-replication, the story is much different. We would not be dealing with a new form of life with moral dilemmas about locking it in a cage, and we could use the vast computation power to directly solve things humans find important (like colonizing space).
-
-* TODO
+If humans are successful in solving alignment and squash any motives of self-replication, the story is much different. We would not be dealing with a new form of life with moral dilemmas about locking it in a cage, and we could use the vast computation power to directly solve things society finds important.
